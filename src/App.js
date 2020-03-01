@@ -37,35 +37,41 @@ function App() {
     setFeedbackFormVisible(true);
   }
 
+
   return (
-    <>
-      <CssBaseline/>
-      <div className="main-content">
-        <div className="main-content__left">
-          <PageBox>
-            <FeedbackList feedbackList={feedbackList}/>
-          </PageBox>
-        </div>
-        <div className="main-content__right">
-          <div className="sub-section">
-            <PageBox>
-              <VideoStream
-                videoUrl={`https://www.youtube.com/embed/${eventId}?controls=0`}
-              />
-            </PageBox>
-          </div>
-          <div className="sub-section">
-            <PageBox>
-              <Dashboard feedbackList={feedbackList}/>
-            </PageBox>
-          </div>
-        </div>
+      <div>
+        {/*<FeedbackList msg="my custom message"/>*/}
+        <FeedbackList msg="my custom message" version={2}/>
       </div>
-      <PageControls buttonAction={showFeedbackForm}/>
-      {feedbackFormVisible && (
-        <AddFeedbackForm onCancel={hideFeedbackForm} onSubmit={addFeedback}/>
-      )}
-    </>
   );
+    // <>
+    //   <CssBaseline/>
+    //   <div className="main-content">
+    //     <div className="main-content__left">
+    //       <PageBox>
+    //         <FeedbackList feedbackList={feedbackList}/>
+    //       </PageBox>
+    //     </div>
+    //     <div className="main-content__right">
+    //       <div className="sub-section">
+    //         <PageBox>
+    //           <VideoStream
+    //             videoUrl={`https://www.youtube.com/embed/${eventId}?controls=0`}
+    //           />
+    //         </PageBox>
+    //       </div>
+    //       <div className="sub-section">
+    //         <PageBox>
+    //           <Dashboard feedbackList={feedbackList}/>
+    //         </PageBox>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <PageControls buttonAction={showFeedbackForm}/>
+    //   {feedbackFormVisible && (
+    //     <AddFeedbackForm onCancel={hideFeedbackForm} onSubmit={addFeedback}/>
+    //   )}
+    // </>
+
 }
 export default App;
